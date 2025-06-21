@@ -9,7 +9,7 @@ const LoginPage = () => {
 
   const router = useRouter();
 
-   useEffect(() => {
+  useEffect(() => {
     if (status === "authenticated") {
       router.push("/");
     }
@@ -18,7 +18,6 @@ const LoginPage = () => {
   if (status === "loading") {
     return <div className={styles.loading}>Loading...</div>;
   }
-
 
   return (
     <div className={styles.container}>
@@ -29,7 +28,9 @@ const LoginPage = () => {
         <div className={styles.socialButton} onClick={() => signIn("github")}>
           Sign in with GitHub
         </div>
-        <div className={styles.socialButton}>Sign in with Facebook</div>
+        <div className={styles.socialButton} onClick={() => signIn("facebook")}>
+          Sign in with Facebook
+        </div>
       </div>
     </div>
   );
